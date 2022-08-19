@@ -143,4 +143,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_PROFILE_MODULE = 'smapp.Profile'
 
 
-Gdjango_heroku.settings(locals())
+django_heroku.settings(locals())
