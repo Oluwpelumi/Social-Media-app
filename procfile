@@ -1,1 +1,1 @@
-web gunicorn smproject.wsgi:application --log-file -
+web gunicorn smproject.wsgi: application --log-file -
