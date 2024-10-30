@@ -12,7 +12,7 @@ from .models import Profile, Post, LikePost, FollowersCount
 # Create your views here.
 
 
-
+ 
 @login_required(login_url='signin')
 def index(request):
     user_object = User.objects.get(username=request.user.username)
@@ -31,6 +31,9 @@ def index(request):
         feed.append(feed_lists)
 
     feed_list = list(chain(*feed))
+
+    for post in feed_list:
+        post.user_profile_img = Profile.objects.get(user__username=post.user).profileimg.url
 
     # posts = Post.objects.all()
 
